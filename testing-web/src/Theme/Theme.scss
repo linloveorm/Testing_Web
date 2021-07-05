@@ -1,0 +1,179 @@
+
+@mixin breakpoint-standard($size) {
+    @if $size==1 {
+      @media only screen and (max-width: 479px) {
+        @content;
+      }
+    } @else if $size==2 {
+      @media only screen and (min-width: 480px) and (max-width: 575px) {
+        @content;
+      }
+    } @else if $size==3 {
+      @media only screen and (min-width: 576px) and (max-width: 767px) {
+        @content;
+      }
+    } @else if $size==4 {
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        @content;
+      }
+    } @else if $size==5 {
+      @media only screen and (max-width: 1024px) {
+        @content;
+      }
+    } @else if $size==6 {
+      @media only screen and (min-width: 1025px)  {
+        @content;
+      }
+    } 
+  }
+
+.header-bar{
+    border-bottom-style: inset;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    @include breakpoint-standard(6){
+        .logo-img{
+          width: 65px;
+          border-radius: 50px;
+          margin: 5px;
+          margin-left: 45px;
+          align-self: center;
+          
+            img {
+              width: 100px;              
+            }            
+        }
+        .left-group{
+          width: auto;
+          align-self: center;
+          margin-right: 50px;
+          display: inline-flex;
+          height: 80px;
+          align-items: center;
+        }
+        .left-input{
+          margin-left: 5px;
+          border: 2px;
+          border-style: solid;
+          border-color: #EAEAEA;
+          border-radius: 30px;
+          // outline: 1px;
+          // outline-style: solid;
+          // outline-color: #EAEAEA;
+          padding-right: 10px;
+          padding-left: 10px;
+          
+          
+          input{
+            border: none;           
+            height: 40px;            
+            outline: 0;            
+            padding-left: 20px;            
+          }
+        }
+        
+        
+        .icon-btn{
+          height: 40px;
+          background-color: transparent;
+          border:none;
+          width:100%;
+          span{
+            font-size: 40px;
+            margin-left: 10px;
+            margin-right: 10px;
+          }
+        }
+        .icon-bell-btn{
+          height: 40px;
+          background-color: transparent;
+          border:none;
+          width:100%;
+          margin-left: 10px;
+          margin-right: 10px;
+          button{
+            height: 45px;
+            background-color: transparent;
+            border-color: black;
+            border-radius: 40px;
+            width: fit-content;            
+          }
+          span{
+            font-size: 30px;
+          }
+        }
+        .icon-all-app-btn{
+          height: 40px;
+          background-color: transparent;
+          border:none;
+          width:100%;
+          margin-left: 10px;
+          margin-right: 10px;
+          display: flex;
+          button{
+            height: 45px;
+            background-color: blue;
+            // border-color: black;
+            border-radius: 40px;
+            width: 50px;
+            display: grid;
+            padding-top: 9px;
+            padding-bottom: 3px
+          }
+          span{
+            font-size: 6px;
+            margin-left: 1px;
+            margin-right: 1px;
+            color: #EAEAEA;
+          }
+          div{
+            display: inline-flex;
+            margin-left: 3px;
+            margin-right: 3px;
+          }
+        }
+        .row-style{
+          display: inline-flex;
+        }
+        .col-left{          
+          border-right: 3px inset;
+          padding-right: 10px;
+        }
+        .col-right{          
+          margin-left: 10px;
+        }
+        .btn-group{
+          display: inline-flex;
+        }
+        
+    }
+
+}
+
+.nav-bar-style{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 45px;
+  .burger-btn{
+    display: grid;
+    background-color: transparent;
+    border: none;
+    width: 60px;
+    height: 40px;
+    
+
+    span{
+      margin-top: 3px;
+      margin-bottom: 3px;
+      margin-left: 2px;
+      margin-right: 2px;
+      background-color: #B2B2B2;
+      height: 5px;
+      border-radius: 20px;
+      width: 35px;
+    }
+  }
+}
