@@ -27,6 +27,13 @@
     } 
   }
 
+.container{
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+}
+
 .header-bar{
     border-bottom-style: inset;
     width: 100%;
@@ -117,11 +124,13 @@
             height: 45px;
             background-color: blue;
             // border-color: black;
+            border: none;
             border-radius: 40px;
             width: 50px;
             display: grid;
             padding-top: 9px;
-            padding-bottom: 3px
+            padding-bottom: 3px;
+            padding-left: 10px;
           }
           span{
             font-size: 6px;
@@ -152,28 +161,113 @@
     }
 
 }
+#ToggleButton{
+  transition: margin-left .5s;
+  padding: 16px;
+}
 
-.nav-bar-style{
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 45px;
-  .burger-btn{
-    display: grid;
+.burger-side-bar{
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 25%;
+  
+  .nav-bar-style{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 45px;
+    .burger-btn{
+      display: grid;
+      background-color: transparent;
+      border: none;
+      width: 70px;
+      height: 40px;
+      text-align: center;      
+  
+      span{
+        margin-top: 3px;
+        margin-bottom: 3px;
+        margin-left: 2px;
+        margin-right: 2px;
+        background-color: #B2B2B2;
+        height: 5px;
+        border-radius: 20px;
+        width: 35px;
+      }
+    }
+    .dropdown-style{
+      background-color: transparent;
+      font-size: 30px;
+      font-style: bold;
+      
+    }
+  }  
+  .side-bar-container{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #292929;
+    
+  }
+  .side-bar-style{
+    background-color: transparent;
+    height: 100%;
+    margin-left: 40px;
+    padding:0px;
+    .menu-text-style{
+      color: white;
+      background-color: transparent;
+      border: none;
+      margin-top: 15px;
+      font-size: 20px;
+
+    }
+    .menu-icon-style{
+      color: white;
+      background-color: transparent;
+      border: none;
+      font-size: 8px;
+    }
+    .bg-trans{
+      background: transparent;
+    }
+  }
+  .side-menu-setting{
+    display: flex;
+    flex-direction: row;
+    align-items: center;      
+  }
+  .setting-dropdown{
+    display: flex;
+    flex-direction: row;
+    align-items: center;     
+  }
+  .setting-button{
+    color: white;
     background-color: transparent;
     border: none;
-    width: 60px;
-    height: 40px;
-    
+    font-size: 20px;
+  }  
+}
 
-    span{
-      margin-top: 3px;
-      margin-bottom: 3px;
-      margin-left: 2px;
-      margin-right: 2px;
-      background-color: #B2B2B2;
-      height: 5px;
-      border-radius: 20px;
-      width: 35px;
-    }
+.second-header{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+
+}
+
+.btn-style{
+  background: transparent;
+  border: 2px;
+  border-color: #292929;
+  border-radius: 20px;
+  span{
+    background: transparent;
+
+  }
+  button{
+    background: transparent;
+    border: none;
   }
 }
