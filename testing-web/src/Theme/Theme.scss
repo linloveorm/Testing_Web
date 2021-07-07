@@ -156,118 +156,112 @@
         }
         .btn-group{
           display: inline-flex;
+          
         }
         
     }
 
 }
-#ToggleButton{
-  transition: margin-left .5s;
-  padding: 16px;
+
+
+.nav-btn-style{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 25px;
+  .burger-btn{
+    display: grid;
+    background-color: transparent;
+    border: none;
+    width: 70px;
+    height: 40px;
+    text-align: center;      
+
+    span{
+      margin-top: 3px;
+      margin-bottom: 3px;
+      margin-left: 2px;
+      margin-right: 2px;
+      background-color: #B2B2B2;
+      height: 5px;
+      border-radius: 20px;
+      width: 35px;
+    }
+  }
 }
 
-.burger-side-bar{
-  margin: 0px;
-  padding: 0px;
-  height: 100%;
-  width: 25%;
-  
-  .nav-bar-style{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 45px;
-    .burger-btn{
-      display: grid;
-      background-color: transparent;
-      border: none;
-      width: 70px;
-      height: 40px;
-      text-align: center;      
-  
-      span{
-        margin-top: 3px;
-        margin-bottom: 3px;
-        margin-left: 2px;
-        margin-right: 2px;
-        background-color: #B2B2B2;
-        height: 5px;
-        border-radius: 20px;
-        width: 35px;
-      }
-    }
-    .dropdown-style{
-      background-color: transparent;
-      font-size: 30px;
-      font-style: bold;
-      
-    }
-  }  
-  .side-bar-container{
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    background-color: #292929;
-    
-  }
-  .side-bar-style{
-    background-color: transparent;
-    height: 100%;
-    margin-left: 40px;
-    padding:0px;
-    .menu-text-style{
-      color: white;
-      background-color: transparent;
-      border: none;
-      margin-top: 15px;
-      font-size: 20px;
-
-    }
-    .menu-icon-style{
-      color: white;
-      background-color: transparent;
-      border: none;
-      font-size: 8px;
-    }
-    .bg-trans{
-      background: transparent;
-    }
-  }
-  .side-menu-setting{
-    display: flex;
-    flex-direction: row;
-    align-items: center;      
-  }
-  .setting-dropdown{
-    display: flex;
-    flex-direction: row;
-    align-items: center;     
-  }
-  .setting-button{
+.nav-menu-style{
+  background-color: #292929;
+  .menu-header-text-style{
     color: white;
     background-color: transparent;
     border: none;
+    margin-top: 15px;
+    font-size: 25px;
+
+  }
+  .menu-text-style{
+    color: white;
+    background-color: transparent;
+    border: none;
+    margin-top: 15px;
     font-size: 20px;
-  }  
+
+  }
+  .menu-icon-style{
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 8px;
+    margin-right: 10px;
+  }
+  .bg-trans{
+    background: transparent;
+  }
 }
 
-.second-header{
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-
-}
 
 .btn-style{
   background: transparent;
   border: 2px;
   border-color: #292929;
   border-radius: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   span{
     background: transparent;
+    border: none;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 
   }
   button{
     background: transparent;
     border: none;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
+
+.second-header{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  justify-content: space-between;
+  .left-group-second-header{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+  }
+  .right-group-second-header{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+  }
+
+}
+
+

@@ -71,14 +71,13 @@ const Header = () => {
                 </div>
             </nav>
             <div className="second-header">
-                <div>
+                <div className="left-group-second-header">
                     <div>
                         <Navbar />
                     </div>
                     <div className="btn-group">
-
                         <div className="dropdown ">
-                            <button className="btn dropdown-style dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button className="btn dropdown-style dropdown-toggle" style={{fontSize:"20px"}} type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
                                 Contact Personal List
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -89,9 +88,9 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                <div > 
+                <div className="right-group-second-header"> 
                     <div className="btn-style">
-                        <span className="bi bi-plus"/>
+                        <span className="bi bi-plus-lg"/>
                         <button>Add Contact Person</button>
                     </div>
                     <div className="btn-style">
@@ -99,7 +98,7 @@ const Header = () => {
                         <button>Imported</button>
                     </div>
                     <div className="btn-style">
-                        <span className="bi bi-gear"/>
+                        <span className="bi bi-gear" style={{fontSize:"25px", marginRight:"20px"}}/>
                     </div>
                 </div>
 
