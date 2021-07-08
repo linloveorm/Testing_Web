@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../Theme.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -19,7 +19,7 @@ const NavBar = () => {
             </div>
 
 
-            <div className="offcanvas offcanvas-start nav-menu-style" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div className="offcanvas offcanvas-start nav-menu-style" data-bs-scroll="true" data-bs-backdrop="false" tabIndex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                 <div className="offcanvas-header">
                     <div className="menu-header-text-style">Contact</div>
                     <button type="button " className="bi bi-x-lg menu-header-text-style" data-bs-dismiss="offcanvas" aria-label="Close"></button>
