@@ -141,16 +141,28 @@ const Contact = () => {
                                 return (
                                     <tr>
                                         <td>
-                                            {itemRow[index].fullName}
+                                            <div className="table-body-style">
+                                                {itemRow[index].fullName}
+                                            </div>
+                                            
                                         </td>
                                         <td>
-                                            {"0" + itemRow[index].mobileNumber}
+                                            <div className="table-body-style">
+                                                {"0" + itemRow[index].mobileNumber}
+                                            </div>
+                                            
                                         </td>
                                         <td>
-                                            {itemRow[index].company}
+                                            <div className="table-body-style">
+                                                {itemRow[index].company}
+                                            </div>
+                                            
                                         </td>
                                         <td>
-                                            {itemRow[index].timeStamp}
+                                            <div className="table-body-style">
+                                                {itemRow[index].timeStamp}
+                                            </div>
+                                            
                                         </td>
                                         <td>
                                             <div className="dot-style">
@@ -176,16 +188,28 @@ const Contact = () => {
                                 return (
                                     <tr>
                                         <td>
-                                            {itemRow[index].fullName}
+                                            <div className="table-body-style">
+                                                {itemRow[index].fullName}
+                                            </div>
+                                            
                                         </td>
                                         <td>
-                                            {"0" + itemRow[index].mobileNumber}
+                                            <div className="table-body-style">
+                                                {"0" + itemRow[index].mobileNumber}
+                                            </div>
+                                            
                                         </td>
                                         <td>
-                                            {itemRow[index].company}
+                                            <div className="table-body-style">
+                                                {itemRow[index].company}
+                                            </div>
+                                            
                                         </td>
                                         <td>
-                                            {itemRow[index].timeStamp}
+                                            <div className="table-body-style">
+                                                {itemRow[index].timeStamp}
+                                            </div>
+                                            
                                         </td>
                                         <td>
                                             <div className="dot-style">
