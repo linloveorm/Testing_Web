@@ -11,34 +11,38 @@ const Contact = () => {
     // const [data, setData] = useState(null)
     const dataJson = require("../json/data-json.json")
     const data = dataJson.results
-    const defaultCol = ["Full Name", "Mobile Number", "company", "Time Stamp"]
-    var obj = data[0]
-    var objKey = Object.keys(obj)
-    var pageSize = 3
+    let defaultCol = ["Full Name", "Mobile Number", "Company", "Time Stamp"]
+    let obj = data[0]
+    let objKey = Object.keys(obj)
+    let pageSize = 3
     const [limit, setLimit] = useState(15);
     const [statePageGroup, setStatePageGroup] = useState(1);
     const [statePage, setStatePage] = useState(1);
     
-    
-    var pageList = []
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
+
+    let pageList = []
+
+    //wrap table by limit items
     const itemsGroup = data.map((e, i) => {
         return i % limit === 0 ? data.slice(i, i + limit) : null;
     }).filter(e => { return e; });
-    // console.log("Items Groups: ", itemsGroup)
 
 
-    for (var i = 0; i < itemsGroup.length; i++) {
+    //get index of table page
+    for (let i = 0; i < itemsGroup.length; i++) {
         pageList.push(i)
     }
-    var pageGroupSize = pageList.length / (pageList.length / pageSize)
+    let pageGroupSize = pageList.length / (pageList.length / pageSize)
 
+    //wrap page button group by page size
     const pagesGroup = pageList.map((e, i) => {
         return i % pageGroupSize === 0 ? pageList.slice(i, i + pageGroupSize) : null;
     }).filter(e => { return e; });
-    
 
-    var res = Object.keys(obj).reduce((prev, curr, index) => {
+    //edit object key
+    let res = Object.keys(obj).reduce((prev, curr, index) => {
         function isUpperCase(aCharacter) {
             return (aCharacter >= 'A') && (aCharacter <= 'Z');
         }
@@ -48,12 +52,12 @@ const Contact = () => {
 
 
         const firstAlphabet = objKey[index].substring(0, 1).toUpperCase()
-        // var nextUpperCaseCharector = 0
-        var firstWord = ""
-        var nextWord = ""
-        var newColKey = ""
+        // let nextUpperCaseCharector = 0
+        let firstWord = ""
+        let nextWord = ""
+        let newColKey = ""
         if (isUpper(objKey[index])) {
-            for (var j = 0; j < objKey[index].length; j++) {
+            for (let j = 0; j < objKey[index].length; j++) {
                 if (isUpperCase(objKey[index].charAt(j))) {
                     // nextUpperCaseCharector = j
                     nextWord = objKey[index].substring(j, (objKey[index].length))
@@ -69,20 +73,18 @@ const Contact = () => {
         return { ...prev, [newColKey]: obj[curr] }
     }, {});
 
-    // let filteredCol = res
-    // let indexDefaultCol =[]
+    //filter only key in data
+    let oldListColName = Object.keys(obj)
 
-    // for(let i = 0; i < defaultCol.length; i++){
-    //     indexDefaultCol.push(res.indexOf(defaultCol[i]))
-    // }
+    //filter only key in res
+    let newListColName = Object.keys(res)
+    let listRemainColName = newListColName.filter(function (obj) { return defaultCol.indexOf(obj) === -1 })
+    
 
-    // console.log("filteredCol: ",indexDefaultCol)
-
-
-
-
+    //Display Table
     const tableList = () => {
-        var itemRow = itemsGroup[statePage - 1]
+        
+        let itemRow = itemsGroup[statePage - 1]
         if (statePage === 1) {
             return (
                 <tbody>
@@ -93,21 +95,33 @@ const Contact = () => {
                                 return (
                                     <tr>
                                         <td>
-                                            {itemRow[index].fullName}
+                                            <div className="table-body-style">
+                                                {itemRow[index].fullName}
+                                            </div>
+                                            
                                         </td>
                                         <td>
-                                            {"0" + itemRow[index].mobileNumber}
+                                            <div className="table-body-style">
+                                                {"0" + itemRow[index].mobileNumber}
+                                            </div>
+                                            
                                         </td>
                                         <td>
-                                            {itemRow[index].company}
+                                            <div className="table-body-style">
+                                                {itemRow[index].company}
+                                            </div>
+                                            
                                         </td>
                                         <td>
-                                            {itemRow[index].timeStamp}
+                                            <div className="table-body-style">
+                                                {itemRow[index].timeStamp}
+                                            </div>
+                                            
                                         </td>
                                         <td>
-                                            <button data-bs-toggle="button" className="btn-page-style">
+                                            <div className="dot-style">
                                                 <span className="bi bi-three-dots"></span>
-                                            </button>
+                                            </div>
                                         </td>
                                     </tr>)
                             }) : ''
@@ -139,9 +153,9 @@ const Contact = () => {
                                             {itemRow[index].timeStamp}
                                         </td>
                                         <td>
-                                            <button data-bs-toggle="button" className="btn-page-style">
+                                            <div className="dot-style">
                                                 <span className="bi bi-three-dots"></span>
-                                            </button>
+                                            </div>
                                         </td>
                                     </tr>)
                             }) : ''
@@ -174,9 +188,9 @@ const Contact = () => {
                                             {itemRow[index].timeStamp}
                                         </td>
                                         <td>
-                                            <button data-bs-toggle="button" className="btn-page-style">
+                                            <div className="dot-style">
                                                 <span className="bi bi-three-dots"></span>
-                                            </button>
+                                            </div>
                                         </td>
                                     </tr>)
                             }) : ''
@@ -189,6 +203,7 @@ const Contact = () => {
 
     }
 
+    //Display page number button group
     const pageNumber = () => {
         if (statePageGroup === 1) {
             return (
@@ -257,6 +272,7 @@ const Contact = () => {
 
     }
 
+    //Display next page button
     const btnNextPage = () => {
         if (statePageGroup === 1) {
 
@@ -292,6 +308,8 @@ const Contact = () => {
             )
         }
     }
+
+    //Display previous page button
     const btnPreviousPage = () => {
         if (statePageGroup > 0) {
             return (
@@ -309,15 +327,20 @@ const Contact = () => {
             )
         }
     }
-   
 
+    //filter the remaining names
+    
+
+    const handleAddCol = (value)=>{
+        defaultCol.push(value)
+    }
 
 
     return (
         <>
             <div className="contact-table">
                 <div >
-                    <table className="table table-light table-hover">
+                    <table className="table  table-striped">
                         <thead>
                             <tr>
                                 {
@@ -325,13 +348,19 @@ const Contact = () => {
                                         ? defaultCol.map((key, index) => {
                                             return (
                                                 <th>
+                                                    <div className="table-col-style">
                                                     {defaultCol[index]}
+                                                    </div>
+                                                    
                                                 </th>
                                             )
                                         }) : ''
                                 }
                                 <th>
-                                    <button data-bs-toggle="button" className="btn-page-style">
+                                    <button type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop"
+                                        className="btn-page-style">
                                         <span className="bi bi-three-dots"></span>
                                     </button>
                                 </th>
@@ -376,6 +405,39 @@ const Contact = () => {
                     </div>
                     <div className="btn-group">
                         {pageNumber()}
+                    </div>
+                    <div>
+                        <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div className="modal-dialog" >
+                                <div className="modal-content" >
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="staticBackdropLabel">Add Column Name</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setIsModalOpen(false)}></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        {
+
+                                            listRemainColName.length > 0
+                                                ? listRemainColName.map((key, i) => {
+                                                    return (
+                                                        <div className="container-modal-btn">
+                                                            <button className="modal-column-btn" onClick={() => handleAddCol(key)}>
+                                                                <span className="bi bi-plus" style={{fontSize:"28px",alignItems:"center"}} />
+                                                                <div className="align-col-name">
+                                                                    {
+                                                                        key
+                                                                    }
+                                                                </div>
+                                                            </button>
+                                                        </div>)
+                                                }) : ''
+                                        }
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

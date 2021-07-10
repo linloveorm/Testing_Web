@@ -88,10 +88,12 @@
           background-color: transparent;
           border:none;
           width:100%;
+          
           span{
             font-size: 40px;
             margin-left: 10px;
             margin-right: 10px;
+            margin-bottom: 20px;
           }
         }
         .icon-bell-btn{
@@ -119,7 +121,6 @@
           width:100%;
           margin-left: 10px;
           margin-right: 10px;
-          display: flex;
           button{
             height: 45px;
             background-color: blue;
@@ -156,17 +157,138 @@
         }
         .btn-group{
           display: inline-flex;
-          
+          height: 60px;
+          align-items: baseline;
+          align-self: auto;
         }
         
     }
+    @include breakpoint-standard(5){
+      .logo-img{
+        width: 65px;
+        border-radius: 50px;
+        margin: 5px;
+        margin-left: 45px;
+        align-self: center;
+        
+          img {
+            width: 100px;              
+          }            
+      }
+      .left-group{
+        width: auto;
+        align-self: center;
+        margin-right: 50px;
+        display: inline-flex;
+        height: 80px;
+        align-items: center;
+      }
+      .left-input{
+        margin-left: 5px;
+        border: 2px;
+        border-style: solid;
+        border-color: #EAEAEA;
+        border-radius: 30px;
+        // outline: 1px;
+        // outline-style: solid;
+        // outline-color: #EAEAEA;
+        padding-right: 10px;
+        padding-left: 10px;
+        
+        
+        input{
+          border: none;           
+          height: 40px;            
+          outline: 0;            
+          padding-left: 20px;            
+        }
+      }
+      
+      
+      .icon-btn{
+        height: 40px;
+        background-color: transparent;
+        border:none;
+        width:100%;
+        span{
+          font-size: 40px;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+      .icon-bell-btn{
+        height: 40px;
+        background-color: transparent;
+        border:none;
+        width:100%;
+        margin-left: 10px;
+        margin-right: 10px;
+        button{
+          height: 45px;
+          background-color: transparent;
+          border-color: black;
+          border-radius: 40px;
+          width: fit-content;            
+        }
+        span{
+          font-size: 30px;
+        }
+      }
+      .icon-all-app-btn{
+        // height: 40px;
+        background-color: transparent;
+        border:none;
+        width:100%;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: flex;
+        button{
+          height: 45px;
+          background-color: blue;
+          // border-color: black;
+          border: none;
+          border-radius: 40px;
+          width: 50px;
+          display: grid;
+          // padding-top: 9px;
+          padding-bottom: 3px;
+          padding-left: 10px;
+        }
+        span{
+          font-size: 6px;
+          margin-left: 1px;
+          margin-right: 1px;
+          color: #EAEAEA;
+        }
+        div{
+          display: inline-flex;
+          margin-left: 3px;
+          margin-right: 3px;
+        }
+      }
+      .row-style{
+        display: inline-flex;
+      }
+      .col-left{          
+        border-right: 3px inset;
+        padding-right: 10px;
+      }
+      .col-right{          
+        margin-left: 10px;
+      }
+      .btn-group{
+        display: inline-flex;
+        
+      }
+      
+  }
 
 }
 
 
 .nav-btn-style{
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 15px;
+  margin-bottom: 20px;
   margin-left: 25px;
   .burger-btn{
     display: grid;
@@ -222,10 +344,7 @@
 
 .btn-style{
   background: transparent;
-  border: 2px;
-  border-style: solid;
-  border-color: #d1d1d1;
-  border-radius: 10px;
+  
   margin-left: 10px;
   margin-right: 10px;
   
@@ -298,6 +417,50 @@
 .dropdown-btn{
   margin-right: 70px;
   
+}
+.dot-style{
+  padding-left: 15px;
+}
+
+.modal-column-btn{
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  border-style: solid;
+  border-color: #B2B2B2;
+  border-radius: 5px;
+  margin-bottom:20px;
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  align-items: center;
+  justify-content: start;
+  &:hover{
+    background-color: #f0f0f0;
+  }
+
+}
+.align-col-name{
+  margin-left: 60px;
+  font-size: 20px;
+}
+
+.container-modal-btn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: center;
+
+}
+
+.table-col-style{
+  text-align: center;
+  font-size: 16px;
+}
+.table-body-style{
+  margin-left: 150px;
+  font-size: 14px;
 }
 
 
