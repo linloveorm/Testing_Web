@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../Theme/Theme.scss"
-
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
+import "../Theme/Theme.scss";
 
 const Contact = () => {
 
@@ -18,7 +15,6 @@ const Contact = () => {
     const [limit, setLimit] = useState(15);
     const [statePageGroup, setStatePageGroup] = useState(1);
     const [statePage, setStatePage] = useState(1);
-    
     const [isModalOpen, setIsModalOpen] = useState(false)
 
 
